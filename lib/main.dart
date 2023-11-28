@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:login/Pages/check_auth_screen.dart';
+import 'package:login/Pages/home_screen.dart';
+import 'package:login/Pages/login_screen.dart';
+import 'package:login/Pages/register_screen.dart';
 import 'register_widget.dart';
 
 void main() {
@@ -9,6 +13,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+ debugShowCheckedModeBanner: false,
+      title: 'IQ-Switch App',
+      initialRoute: 'checking',
+      routes: {
+        'login': (_) => LoginScreen(),
+        'register': (_) => RegisterScreen(),
+        'home': (_) => HomeScreen(),
+        'checking': (_) => CheckAuthScreen()
+
+      },
+
+
       home: LoginPage(),
     );
   }
